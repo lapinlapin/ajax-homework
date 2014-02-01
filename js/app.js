@@ -96,15 +96,18 @@ APP.github = (function() {
 		if (obj[repos]) {
 			results[repos] = obj[repos];
 		}		
-		obj = undefined;   // исходный нам не нужен, поэтому и данные его не нужны все
-
-		return results; 
+		obj = undefined;   // исходный нам не нужен, поэтому и данные его не нужны все 
 	}
 
 	// запрос 1
-	function getMain(login) {		// принимаем логин
-		var readCash = APP.cache.readCash; // зависимость на чтение кеша
-		if (readCash(login)) {  //если возвратит тру, заберем из кеша, добавим в дом
+	function getMain(login) {	
+		// принимаем логин
+		var readCash = APP.cache.readCash, // зависимость на чтение кеша
+			checkLogin,
+			clearRes;
+
+		checkLogin = readCash(login);
+		if (checkLogin) {  //если возвратит тру, заберем из кеша, добавим в дом
 			return false;   // и прикратим все ниже
 		};
 	       // ИНАЧЕ
@@ -158,7 +161,8 @@ APP.github = (function() {
 		    caching(login, results); // кешируем
 		    render('template', results);  // и когда теперь объект results собран, рендерим
 		}
-		xhr.send(null);		
+		xhr.send(null);	
+
 	}
 	return {   //открываем
 		getMain: getMain,
