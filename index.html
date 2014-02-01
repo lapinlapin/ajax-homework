@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>ajax homework</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script id="template" type="text/html">
+		<div class="persons">
+			<div class="login">{{login}}</div>
+			<div class="email"><span>Почта:</span> {{email}}</div>
+			<div class="follow"><span>Фолловеров:</span> {{followers}}</div>
+			<div class="repos"><span>Репозитории:</span> {{repos_url}}</div>
+		</div>	
+	</script>
+
+	<div class="menu">
+		<input class="text" type="text" value="gurugray">
+		<a href="#" class="button">Получить</a>
+	</div>
+	<div class="message">
+		<img src="img/error.png" alt="">
+		<p>Пользователь с таким именем не существует!</p>
+	</div>
+
+	<script src="js/mustache.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+	<script src="js/index.js" type="text/javascript"></script>
+</body>
+</html>
