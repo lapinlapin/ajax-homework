@@ -100,16 +100,16 @@ APP.github = (function() {
         xhr.onreadystatechange = function() {
             if (xhr.readyState != 4) return; 
 
-		    jsonGetData = JSON.parse(xhr.responseText); 
+            jsonGetData = JSON.parse(xhr.responseText); 
 			
-	        if (!jsonGetData.login) {   
-		        checkExistLogin();  
-		        return false;  
-		    }
+            if (!jsonGetData.login) {   
+                checkExistLogin();  
+                return false;  
+            }
 
-		    clearResults(results); 
-		    checkData(jsonGetData);
-		    getRepos(login); 
+            clearResults(results); 
+            checkData(jsonGetData);
+            getRepos(login); 
         }
         xhr.send(null);
     }
