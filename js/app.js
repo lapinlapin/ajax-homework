@@ -75,7 +75,7 @@ APP.github = (function() {
         });
     }
 
-    function checkData(obj) {
+    function checkData(obj, results) {
         ['login','email','followers','repos_url'].
             forEach(function(elem) {
                 if (obj[elem]) {
@@ -108,7 +108,7 @@ APP.github = (function() {
             }
 
             clearResults(results); 
-            checkData(jsonGetData);
+            checkData(jsonGetData, results);
             getRepos(login); 
         }
         xhr.send(null);

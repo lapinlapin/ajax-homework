@@ -77,7 +77,7 @@ a[class=button]:active {
 .login {
     text-align: center;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
 }
 
 .email, .follow, .repos {
