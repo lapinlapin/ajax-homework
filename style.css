@@ -33,7 +33,7 @@ body {
     outline: none;
 }
 
-a[class=button] {
+a.button {
     border: 1px solid #AAADB6;
     display: table-cell;
     vertical-align: middle;
@@ -49,15 +49,15 @@ a[class=button] {
     text-decoration: none;   
 }
 
-a[class=button]:hover {   
+a.button:hover {   
     border: 1px solid #CFCFCF;
 }
 
-a[class=button]:focus {
+a.button:focus {
     border: 1px solid #EBEEF7;
 }
 
-a[class=button]:active {
+a.button:active {
     border: 1px solid #2A656B;
 }
 

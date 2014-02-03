@@ -70,16 +70,17 @@ APP.github = (function() {
     }
 
     function clearResults(obj) {  
-        Object.keys(obj).forEach(function(elem) {
-            obj[elem] = ''; 
-        });
+        Object.keys(obj).
+            forEach(function(elem) {
+                obj[elem] = ''; 
+            });
     }
 
     function checkData(obj, results) {
-        ['login','email','followers','repos_url'].
+        Object.keys(results).
             forEach(function(elem) {
                 if (obj[elem]) {
-            	results[elem] = obj[elem];
+                results[elem] = obj[elem];
             }
         });
         obj = undefined;
@@ -111,7 +112,7 @@ APP.github = (function() {
             checkData(jsonGetData, results);
             getRepos(login); 
         }
-        xhr.send(null);
+        xhr.send();
     }
     
     function getRepos(login) {
@@ -137,7 +138,7 @@ APP.github = (function() {
             caching(login, results); 
             render(results);  
         }
-        xhr.send(null);	
+        xhr.send();	
     }
     return {  
         getMain: getMain,
